@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+  .del{
+      background-color: brown;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50%;
+      float: right;
+  }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Todo App</title>
+</head>
+<body>
+<div id="app">
+<div class="row mt-5">
+<div class="col-md-5 offset-md-1">
+    <ul class="list-group">
+        <li class="list-group-item" v-for = "task in tasks">
+            {{ task.title}}
+            <span class="del" @click = 'del(task)'>x</span>
+        </li>
+    </ul>
+</div>
+<div class="col-md-5">
+Form
+<form>
+    <div class="form-group">
+      <input v-model= "newTaskName" class="form-control" placeholder="Enter Your Task Here" 
+      />
+    </div>
+    <div>
+        <button class="btn btn-primary" type="button" @click = "saveTask()">Save</button>
+    </div>    
+   </form>
+</div>
+</div>
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
